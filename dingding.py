@@ -15,15 +15,17 @@ def send_msg_by_dd():
     	myserver = os.environ.get('NOTIFY_SERVICEDESC')
     	mystat = os.environ.get('NOTIFY_SERVICESTATE')
     	mytitle = "{0} {1} is {2}".format(myalias,myserver,mystat)
+        mymessage = os.environ.get('NOTIFY_SERVICEOUTPUT')
     else:
     	mystat = os.environ.get("NOTIFY_HOSTSTATE")
     	mytitle =  "{0} is {1}".format(myalias,mystat)
+        mymessage = os.environ.get('NOTIFY_HOSTOUTPUT')
     	
     mydate = os.environ.get('NOTIFY_SHORTDATETIME')
     
     myhost = os.environ.get('NOTIFY_HOSTADDRESS')
     
-    mymessage = os.environ.get('NOTIFY_SERVICEOUTPUT')
+    #mymessage = os.environ.get('NOTIFY_SERVICEOUTPUT')
     
     try:
     	myoutput = os.environ.get('NOTIFY_LONGSERVICEOUTPUT')
